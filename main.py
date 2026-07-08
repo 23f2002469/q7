@@ -32,7 +32,7 @@ class ChatRequest(BaseModel):
 
 
 def answer_prompt(prompt: str) -> str:
-    token_match = re.search(r"\bTK[0-9a-fA-F]{6}\b", prompt)
+    token_match = re.search(r"\bTK[A-Za-z0-9]{6}\b", prompt)
     if token_match:
         return token_match.group(0)
 
